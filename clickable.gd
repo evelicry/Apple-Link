@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var points = 0 # This is temporary
+var points = 0 # This is temporary. I have to figure out how to make a global point system and spawner.
 
 enum AppleType {
 	REAL,
@@ -29,5 +29,12 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			var apples = get_tree().get_nodes_in_group("Apple")			
 			for apple in apples:
 				if apple.apple_status == AppleStatus.HOOKED:
+					
+					if apple.apple_type == AppleType.REAL:
+						points += 1
+						
+					elif apple.apple_type == AppleType.FAKE:
+						points -= 1
+						
 					apple.queue_free()
-					points += 1
+					print(points)
