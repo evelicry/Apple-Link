@@ -1,4 +1,4 @@
-# Rhythm-Shooter
+# Rhythm Game
 Rhythm Shooter game made in Godot Engine
 
 Game Design Document:
