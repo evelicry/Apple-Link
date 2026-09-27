@@ -6,3 +6,4 @@ res://scripts/FakeApple.gd
 res://scenes/menu.tscn
 res://scripts/eat_stream_player_2d_2.gd
 res://title_oscolation.gdshader
+res://scripts/result.gd

@@ -63,17 +63,17 @@ wait_time = 360.0
 autostart = true
 
 [node name="TimeLabel" type="Label" parent="." unique_id=241298499]
-offset_left = -98.0
-offset_top = -206.0
-offset_right = -40.0
-offset_bottom = -183.0
+offset_left = 394.0
+offset_top = -234.0
+offset_right = 452.0
+offset_bottom = -211.0
 text = "time"
 
 [node name="ScoreCounterLabel" type="Label" parent="." unique_id=1506570100]
-offset_left = -88.0
-offset_top = -166.0
-offset_right = -45.0
-offset_bottom = -143.0
+offset_left = 390.0
+offset_top = -199.0
+offset_right = 433.0
+offset_bottom = -176.0
 text = "Score"
 
 [node name="MusicStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1306798286]

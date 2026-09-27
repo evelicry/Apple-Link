@@ -7,6 +7,8 @@
 [ext_resource type="Shader" uid="uid://brupv0b4fvb3s" path="res://title_oscolation.gdshader" id="4_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://dqk87lvua3ngv" path="res://sprites/start2.png" id="6_v86rl"]
 [ext_resource type="Texture2D" uid="uid://cl80do5ajhxas" path="res://sprites/start.png" id="7_13sgg"]
+[ext_resource type="Texture2D" uid="uid://bidyhal43urt" path="res://sprites/apples/control.png" id="8_13sgg"]
+[ext_resource type="AudioStream" uid="uid://dexpgbqa2abg4" path="res://audio/music/blllmenutsrnenwe.wav" id="8_i6lef"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_choun"]
 shader = ExtResource("4_4ytvr")
@@ -14,7 +16,7 @@ shader = ExtResource("4_4ytvr")
 [sub_resource type="SpriteFrames" id="SpriteFrames_sb1ej"]
 animations = [{
 "frames": [{
-"duration": 2.2,
+"duration": 1.0,
 "texture": ExtResource("6_v86rl")
 }, {
 "duration": 1.0,
@@ -43,17 +45,21 @@ texture = ExtResource("3_4ytvr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=335923513]
 
-[node name="Label2" type="Label" parent="." unique_id=1954721223]
-offset_left = -565.0
-offset_top = -116.0
-offset_right = -342.0
-offset_bottom = -15.0
-text = "Left click to link apple. 
-(do not eat the green apples)
-Right click to eat apple.
-Get to 40"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=126510168]
 position = Vector2(-19, 237)
 sprite_frames = SubResource("SpriteFrames_sb1ej")
-frame_progress = 0.02508366
+frame_progress = 0.26804122
+speed_scale = 0.4
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=467903556]
+stream = ExtResource("8_i6lef")
+volume_db = -6.653
+pitch_scale = 1.35
+autoplay = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=260604573]
+position = Vector2(-412.00003, 154)
+scale = Vector2(0.42923984, 0.42923984)
+texture = ExtResource("8_13sgg")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
