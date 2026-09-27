@@ -1,12 +1,8 @@
-res://scripts/RealApple.gd
 res://scenes/main.tscn
-res://audio/music/temp.txt
 res://scripts/global.gd
-res://scenes/lose.tscn
-res://scenes/win.tscn
-res://scripts/result.gd
-res://scenes/RealApple.tscn
+res://scripts/RealApple.gd
 res://scenes/FakeApple.tscn
-res://scenes/menu.tscn
-res://scripts/menu.gd
 res://scripts/FakeApple.gd
+res://scenes/menu.tscn
+res://scripts/eat_stream_player_2d_2.gd
+res://title_oscolation.gdshader

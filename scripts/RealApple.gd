@@ -2,7 +2,6 @@ extends Sprite2D
 
 ## this is so the line works!!
 ## also so autocomplete works
-@onready var biting_real: AudioStreamPlayer2D = $"../../BitingReal"
 
 enum AppleType {
 	REAL,
@@ -21,11 +20,10 @@ func _on_timer_timeout() -> void:
 	texture = load("res://sprites/apples/red.webp")
 	apple_status = AppleStatus.NOT_HOOKED
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			apple_status = AppleStatus.HOOKED
-			biting_real.play()
 			texture = load("res://sprites/apples/red_bitten.webp")
 			$Timer.start()

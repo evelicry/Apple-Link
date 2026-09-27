@@ -13,6 +13,13 @@ const real_apple = preload("res://scenes/RealApple.tscn")
 @export var chance_for_fake_apple:int = 3
 
 @export var line:ObjectLinker
+
+@onready var music:AudioStreamPlayer2D = $MusicStreamPlayer2D
+
+signal fake_apple_eaten()
+
+signal real_apple_eaten()
+
 var minute = 0
 var second = 0
 
@@ -20,16 +27,17 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			var apples = get_tree().get_nodes_in_group("Apple")
-
 			for apple in apples:
 				if apple.apple_status == apple.AppleStatus.HOOKED:
 					
 					if apple.apple_type == apple.AppleType.REAL:
+						real_apple_eaten.emit()
 						points += 1
 						
 					elif apple.apple_type == apple.AppleType.FAKE:
+						fake_apple_eaten.emit()
 						points += -3
-
+				
 					apple.queue_free()
 
 func _process(_delta: float) -> void:
@@ -70,3 +78,7 @@ func _on_timer_timeout() -> void:
 func _on_floor_area_entered(area: Area2D) -> void:
 	points += -1
 	area.get_parent().queue_free()
+
+
+func _on_music_stream_player_2d_finished() -> void:
+	music.play()

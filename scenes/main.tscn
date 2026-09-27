@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://3d0pqjqcoqu3" path="res://sprites/apple_tree.webp" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dy24eyce547d0" path="res://sprites/sky.webp" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cln68yaevk3i8" path="res://scenes/FakeApple.tscn" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://sdq0nx0dpvgk" path="res://audio/music/spencer_yk-little-slimex27s-adventure-151007.mp3" id="7_tipki"]
+[ext_resource type="AudioStream" uid="uid://cd0x5am0aius" path="res://audio/freesound_community-apple-bite-85720.mp3" id="8_85g3d"]
+[ext_resource type="Script" uid="uid://bwck3vgyddbyx" path="res://scripts/eat_stream_player_2d_2.gd" id="9_85g3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuldn"]
 size = Vector2(1477, 197)
@@ -73,5 +76,14 @@ offset_right = -45.0
 offset_bottom = -143.0
 text = "Score"
 
+[node name="MusicStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1306798286]
+stream = ExtResource("7_tipki")
+autoplay = true
+
+[node name="EatStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=754536772]
+stream = ExtResource("8_85g3d")
+script = ExtResource("9_85g3d")
+
 [connection signal="area_entered" from="Floor" to="." method="_on_floor_area_entered"]
 [connection signal="timeout" from="AppleSpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="MusicStreamPlayer2D" to="." method="_on_music_stream_player_2d_finished"]

@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://cnray6ow1135h" path="res://scripts/result.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://3d0pqjqcoqu3" path="res://sprites/apple_tree.webp" id="2_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://bxleimb558biq" path="res://sprites/logo.png" id="3_4ytvr"]
+[ext_resource type="Shader" uid="uid://brupv0b4fvb3s" path="res://title_oscolation.gdshader" id="4_4ytvr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_choun"]
+shader = ExtResource("4_4ytvr")
 
 [node name="Node2D" type="Node2D" unique_id=282925164]
 script = ExtResource("1_mhnvy")
@@ -16,8 +20,9 @@ texture = ExtResource("2_mhnvy")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=2002527282]
 self_modulate = Color(0.729365, 0.74842304, 0.7484216, 1)
+material = SubResource("ShaderMaterial_choun")
 position = Vector2(-3.999999, -94)
-scale = Vector2(0.6565144, 0.6565144)
+scale = Vector2(0.581, 0.581)
 texture = ExtResource("3_4ytvr")
 
 [node name="Label" type="Label" parent="." unique_id=46338928]
@@ -31,8 +36,10 @@ text = "Click To Start"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=335923513]
 
 [node name="Label2" type="Label" parent="." unique_id=1954721223]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -558.0
+offset_top = 160.0
+offset_right = -158.0
+offset_bottom = 235.0
 text = "Left click to link apple. (do not eat the green apples)
 Right click to eat apple.
 Get to 40"
