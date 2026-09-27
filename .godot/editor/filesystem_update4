@@ -7,3 +7,5 @@ res://scenes/win.tscn
 res://scripts/result.gd
 res://scenes/RealApple.tscn
 res://scenes/FakeApple.tscn
+res://scenes/menu.tscn
+res://scripts/menu.gd

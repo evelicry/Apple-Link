@@ -74,5 +74,4 @@ offset_bottom = -143.0
 text = "Score"
 
 [connection signal="area_entered" from="Floor" to="." method="_on_floor_area_entered"]
-[connection signal="body_entered" from="Floor" to="." method="_on_floor_body_entered"]
 [connection signal="timeout" from="AppleSpawnTimer" to="." method="_on_timer_timeout"]
