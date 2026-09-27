@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cyxhqdwwo0ts"]
+
+[ext_resource type="Texture2D" uid="uid://bkvvqfi74pn0x" path="res://sprites/win.png" id="1_826fv"]
+[ext_resource type="Script" uid="uid://cnray6ow1135h" path="res://scripts/result.gd" id="1_iiocm"]
+[ext_resource type="Texture2D" uid="uid://cmedxgc55rucf" path="res://sprites/retry.png" id="2_iiocm"]
+[ext_resource type="Texture2D" uid="uid://dy24eyce547d0" path="res://sprites/sky.webp" id="2_yxbqr"]
+
+[node name="Win" type="Node2D" unique_id=176223952]
+script = ExtResource("1_iiocm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=432950111]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1645285778]
+texture = ExtResource("2_yxbqr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=784509990]
+position = Vector2(-2, -107.999985)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_826fv")
+
+[node name="RetrySprite2D2" type="Sprite2D" parent="." unique_id=1827900739]
+position = Vector2(-4, 182)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_iiocm")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cln68yaevk3i8"]
 
 [ext_resource type="Texture2D" uid="uid://8roua75lkywt" path="res://sprites/apples/green.webp" id="1_tfo6a"]
-[ext_resource type="Script" uid="uid://dhktw2oafw37u" path="res://scripts/RealApple.gd" id="2_elmh7"]
+[ext_resource type="Script" uid="uid://dc2e5c1oxkbpe" path="res://scripts/FakeApple.gd" id="2_tfo6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfsc"]
 
@@ -9,7 +9,7 @@
 
 [node name="FakeAppleSprite" type="Sprite2D" parent="." unique_id=1141405102 groups=["Apple"]]
 texture = ExtResource("1_tfo6a")
-script = ExtResource("2_elmh7")
+script = ExtResource("2_tfo6a")
 
 [node name="Area2D" type="Area2D" parent="FakeAppleSprite" unique_id=1775652860]
 

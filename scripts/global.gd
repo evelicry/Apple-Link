@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 						points += 1
 						
 					elif apple.apple_type == apple.AppleType.FAKE:
-						points -= 3
+						points += -3
 
 					apple.queue_free()
 
@@ -46,10 +46,11 @@ func _process(_delta: float) -> void:
 	if line != null:
 		line.clear_points()
 		
-func _on_floor_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Apple"):
-		points = -1
-		body.queue_free()
+	if points >= 40:
+		get_tree().change_scene_to_file("res://scenes/win.tscn")
+	elif points <= -40:
+		get_tree().change_scene_to_file("res://scenes/lose.tscn")
+		
 
 func _on_timer_timeout() -> void:
 	for i in apples_spawn_per_timer:
@@ -65,5 +66,7 @@ func _on_timer_timeout() -> void:
 		add_child(r_apple)
 	apple_spawn_timer.start()
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+
+func _on_floor_area_entered(area: Area2D) -> void:
+	points += -1
+	area.get_parent().queue_free()

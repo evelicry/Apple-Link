@@ -34,7 +34,6 @@ position = Vector2(336, 0)
 
 [node name="ObjectLinker" type="Line2D" parent="." unique_id=1677003764]
 position = Vector2(2, -9)
-default_color = Color(0, 0, 0, 1)
 script = ExtResource("2_0wfyh")
 metadata/_custom_type_script = "uid://dv0sgwkv1e80e"
 
@@ -47,6 +46,7 @@ position = Vector2(9, -22)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=798370726]
 position = Vector2(434.5, 502.5)
 shape = SubResource("RectangleShape2D_kuldn")
+script = ExtResource("1_sugp2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1685695253]
 position = Vector2(458, 66)
@@ -73,5 +73,6 @@ offset_right = -45.0
 offset_bottom = -143.0
 text = "Score"
 
+[connection signal="area_entered" from="Floor" to="." method="_on_floor_area_entered"]
 [connection signal="body_entered" from="Floor" to="." method="_on_floor_body_entered"]
 [connection signal="timeout" from="AppleSpawnTimer" to="." method="_on_timer_timeout"]

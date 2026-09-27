@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://kl1mlt5hk0e8"]
+
+[ext_resource type="Script" uid="uid://cnray6ow1135h" path="res://scripts/result.gd" id="1_10rtl"]
+[ext_resource type="Texture2D" uid="uid://b60mpdcocnd82" path="res://sprites/lose.png" id="1_r6nsb"]
+[ext_resource type="Texture2D" uid="uid://cmedxgc55rucf" path="res://sprites/retry.png" id="2_10rtl"]
+[ext_resource type="Texture2D" uid="uid://dy24eyce547d0" path="res://sprites/sky.webp" id="2_h0cgr"]
+
+[node name="Lose" type="Node2D" unique_id=1142639595]
+script = ExtResource("1_10rtl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2027970528]
+self_modulate = Color(0.729365, 0.74842304, 0.7484216, 1)
+texture = ExtResource("2_h0cgr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=327206659]
+position = Vector2(-2, -107.999985)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_r6nsb")
+
+[node name="RetrySprite2D3" type="Sprite2D" parent="." unique_id=226711206]
+position = Vector2(-4, 182)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_10rtl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2145830567]
