@@ -29,3 +29,10 @@ scale = Vector2(4.220231, 4.220231)
 text = "Click To Start"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=335923513]
+
+[node name="Label2" type="Label" parent="." unique_id=1954721223]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Left click to link apple. (do not eat the green apples)
+Right click to eat apple.
+Get to 40"

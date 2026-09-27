@@ -9,3 +9,4 @@ res://scenes/RealApple.tscn
 res://scenes/FakeApple.tscn
 res://scenes/menu.tscn
 res://scripts/menu.gd
+res://scripts/FakeApple.gd

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cd0x5am0aius"
-path="res://.godot/imported/freesound_community-apple-bite-85720.mp3-6ff1fe1d1a81a395d4bb76cdde42e7da.mp3str"
+path="res://.godot/imported/freesound_community-apple-bite-85720.mp3-f79308b168c5848b90eae4ad5d2ddf27.mp3str"
 
 [deps]
 
-source_file="res://Audio/freesound_community-apple-bite-85720.mp3"
-dest_files=["res://.godot/imported/freesound_community-apple-bite-85720.mp3-6ff1fe1d1a81a395d4bb76cdde42e7da.mp3str"]
+source_file="res://audio/freesound_community-apple-bite-85720.mp3"
+dest_files=["res://.godot/imported/freesound_community-apple-bite-85720.mp3-f79308b168c5848b90eae4ad5d2ddf27.mp3str"]
 
 [params]
 
