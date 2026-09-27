@@ -13,6 +13,8 @@ enum AppleStatus {
 	NOT_HOOKED
 }
 
+@onready var biting_fake: AudioStreamPlayer2D = $"../../BitingFake"
+
 var apple_type: AppleType = AppleType.FAKE
 var apple_status: AppleStatus = AppleStatus.NOT_HOOKED
 
@@ -25,5 +27,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			apple_status = AppleStatus.HOOKED
+			biting_fake.play()
 			texture = load("res://sprites/apples/green_bitten.webp")
 			$Timer.start()
