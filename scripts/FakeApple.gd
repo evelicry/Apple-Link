@@ -17,6 +17,7 @@ var apple_type: AppleType = AppleType.FAKE
 var apple_status: AppleStatus = AppleStatus.NOT_HOOKED
 
 func _on_timer_timeout() -> void:
+	texture = load("res://sprites/apples/green.webp")
 	apple_status = AppleStatus.NOT_HOOKED
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -24,4 +25,5 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			apple_status = AppleStatus.HOOKED
+			texture = load("res://sprites/apples/green_bitten.webp")
 			$Timer.start()
