@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c0t1pydwy7ut1"]
+
+[ext_resource type="Texture2D" uid="uid://d25wrlcp5owxa" path="res://sprites/apples/red.webp" id="1_v0x2j"]
+[ext_resource type="Script" uid="uid://dhktw2oafw37u" path="res://scripts/RealApple.gd" id="2_kjguj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfsc"]
+
+[node name="RealApple" type="StaticBody2D" unique_id=2132145217]
+
+[node name="RealAppleSprite" type="Sprite2D" parent="." unique_id=1141405102 groups=["Apple"]]
+texture = ExtResource("1_v0x2j")
+script = ExtResource("2_kjguj")
+
+[node name="Area2D" type="Area2D" parent="RealAppleSprite" unique_id=1775652860]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RealAppleSprite/Area2D" unique_id=1129550438]
+scale = Vector2(6.5, 6.5)
+shape = SubResource("RectangleShape2D_dgfsc")
+
+[node name="Timer" type="Timer" parent="RealAppleSprite" unique_id=1522412962]
+wait_time = 5.0
+
+[connection signal="input_event" from="RealAppleSprite/Area2D" to="RealAppleSprite" method="_on_area_2d_input_event"]
+[connection signal="timeout" from="RealAppleSprite/Timer" to="RealAppleSprite" method="_on_timer_timeout"]

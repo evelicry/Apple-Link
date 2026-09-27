@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dw0eu36sjqk2x"]
+
+[ext_resource type="PackedScene" uid="uid://c0t1pydwy7ut1" path="res://scenes/RealApple.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bsf7bffkg4dmc" path="res://scripts/global.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://dv0sgwkv1e80e" path="res://scripts/object_linker.gd" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://3d0pqjqcoqu3" path="res://sprites/apple_tree.webp" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://dy24eyce547d0" path="res://sprites/sky.webp" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cln68yaevk3i8" path="res://scenes/FakeApple.tscn" id="6_tefeu"]
+
+[node name="Node2D" type="Node2D" unique_id=263240350]
+position = Vector2(120, 248)
+script = ExtResource("1_sugp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275230730]
+position = Vector2(436, -232)
+texture = ExtResource("4_tbgi4")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=1615815234]
+position = Vector2(444.99994, 76.50006)
+scale = Vector2(0.721914, 0.92510414)
+texture = ExtResource("4_jyhfs")
+
+[node name="RealApple" parent="." unique_id=2132145217 instance=ExtResource("1_ig7tw")]
+
+[node name="RealApple2" parent="." unique_id=943801261 instance=ExtResource("1_ig7tw")]
+position = Vector2(336, 0)
+
+[node name="ObjectLinker" type="Line2D" parent="." unique_id=1677003764]
+position = Vector2(2, -9)
+default_color = Color(0, 0, 0, 1)
+script = ExtResource("2_0wfyh")
+metadata/_custom_type_script = "uid://dv0sgwkv1e80e"
+
+[node name="FakeApple" parent="." unique_id=811304147 instance=ExtResource("6_tefeu")]
+position = Vector2(722, 159)
