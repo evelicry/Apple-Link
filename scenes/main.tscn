@@ -7,12 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://dy24eyce547d0" path="res://sprites/sky.webp" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cln68yaevk3i8" path="res://scenes/FakeApple.tscn" id="6_tefeu"]
 
-[node name="Node2D" type="Node2D" unique_id=263240350]
-position = Vector2(120, 248)
-script = ExtResource("1_sugp2")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuldn"]
+size = Vector2(1477, 197)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275230730]
-position = Vector2(436, -232)
+[node name="Node2D" type="Node2D" unique_id=263240350 node_paths=PackedStringArray("score_counter", "time_label", "apple_spawn_timer", "game_end_timer", "line")]
+script = ExtResource("1_sugp2")
+score_counter = NodePath("ScoreCounterLabel")
+time_label = NodePath("TimeLabel")
+apple_spawn_timer = NodePath("AppleSpawnTimer")
+game_end_timer = NodePath("GameEndTimer")
+line = NodePath("ObjectLinker")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=275230730]
+position = Vector2(461, 82)
 texture = ExtResource("4_tbgi4")
 
 [node name="Tree" type="Sprite2D" parent="." unique_id=1615815234]
@@ -33,3 +40,38 @@ metadata/_custom_type_script = "uid://dv0sgwkv1e80e"
 
 [node name="FakeApple" parent="." unique_id=811304147 instance=ExtResource("6_tefeu")]
 position = Vector2(722, 159)
+
+[node name="Floor" type="Area2D" parent="." unique_id=76121293]
+position = Vector2(9, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=798370726]
+position = Vector2(434.5, 502.5)
+shape = SubResource("RectangleShape2D_kuldn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1685695253]
+position = Vector2(458, 66)
+
+[node name="AppleSpawnTimer" type="Timer" parent="." unique_id=674892440]
+wait_time = 2.0
+autostart = true
+
+[node name="GameEndTimer" type="Timer" parent="." unique_id=1441941482]
+wait_time = 360.0
+autostart = true
+
+[node name="TimeLabel" type="Label" parent="." unique_id=241298499]
+offset_left = -98.0
+offset_top = -206.0
+offset_right = -40.0
+offset_bottom = -183.0
+text = "time"
+
+[node name="ScoreCounterLabel" type="Label" parent="." unique_id=1506570100]
+offset_left = -88.0
+offset_top = -166.0
+offset_right = -45.0
+offset_bottom = -143.0
+text = "Score"
+
+[connection signal="body_entered" from="Floor" to="." method="_on_floor_body_entered"]
+[connection signal="timeout" from="AppleSpawnTimer" to="." method="_on_timer_timeout"]
