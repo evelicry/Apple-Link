@@ -16,6 +16,21 @@ const real_apple = preload("res://scenes/RealApple.tscn")
 var minute = 0
 var second = 0
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			var apples = get_tree().get_nodes_in_group("Apple")
+
+			for apple in apples:
+				if apple.apple_status == apple.AppleStatus.HOOKED:
+					
+					if apple.apple_type == apple.AppleType.REAL:
+						points += 1
+						
+					elif apple.apple_type == apple.AppleType.FAKE:
+						points -= 3
+
+					apple.queue_free()
 
 func _process(_delta: float) -> void:
 	for i in get_tree().get_nodes_in_group("Apple"):
@@ -30,11 +45,11 @@ func _process(_delta: float) -> void:
 		score_counter.text = "score: " +str(points)
 	if line != null:
 		line.clear_points()
+		
 func _on_floor_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Apple"):
 		points = -1
 		body.queue_free()
-
 
 func _on_timer_timeout() -> void:
 	for i in apples_spawn_per_timer:
@@ -49,4 +64,6 @@ func _on_timer_timeout() -> void:
 		r_apple.position.x = randi_range(-70, 972)
 		add_child(r_apple)
 	apple_spawn_timer.start()
-	
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
