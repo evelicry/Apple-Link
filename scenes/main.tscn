@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dw0eu36sjqk2x"]
 
 [ext_resource type="PackedScene" uid="uid://c0t1pydwy7ut1" path="res://scenes/Object.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dv0sgwkv1e80e" path="res://object_linker.gd" id="2_0wfyh"]
 
 [node name="Node2D" type="Node2D" unique_id=263240350]
 
@@ -12,3 +13,9 @@ position = Vector2(721, 224)
 
 [node name="Object3" parent="." unique_id=304081373 instance=ExtResource("1_ig7tw")]
 position = Vector2(498, 228)
+
+[node name="ObjectLinker" type="Line2D" parent="." unique_id=1677003764]
+position = Vector2(2, -9)
+default_color = Color(0, 0, 0, 1)
+script = ExtResource("2_0wfyh")
+metadata/_custom_type_script = "uid://dv0sgwkv1e80e"

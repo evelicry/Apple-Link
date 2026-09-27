@@ -1,5 +1,8 @@
 extends Sprite2D
 
+## this is so the line works!!
+## also so autocomplete works
+class_name  Apple
 var points = 0 # This is temporary. I have to figure out how to make a global point system and spawner.
 
 enum AppleType {

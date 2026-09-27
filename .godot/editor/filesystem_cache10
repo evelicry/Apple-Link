@@ -1,0 +1,9 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1790459986
+clickable.gd::GDScript::7672422084179893700::1790459756::0::1::::<>Sprite2D<><>0<>0<><>::
+icon.svg::CompressedTexture2D::6934076669176794756::1790459756::1790459986::1::::<><><>0<>0<>619cbc065cfc663b6556b439811f1600<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1790459756::0::1::::<><><>0<>0<><>::
+::res://scenes/::1790459756
+main.tscn::PackedScene::8755306158189920741::1790459756::0::1::::<><><>0<>0<><>::uid://c0t1pydwy7ut1::::res://scenes/Object.tscn
+Object.tscn::PackedScene::6568392330612398576::1790459756::0::1::::<><><>0<>0<><>::uid://c516h2qtajsem::::res://icon.svg<>uid://dhktw2oafw37u::::res://clickable.gd
+object.tscn::PackedScene::2043643670064893480::1790459756::0::1::::<><><>0<>0<><>::uid://c516h2qtajsem::::res://icon.svg<>uid://dhktw2oafw37u::::res://clickable.gd
