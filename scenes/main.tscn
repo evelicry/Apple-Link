@@ -86,4 +86,5 @@ script = ExtResource("9_85g3d")
 
 [connection signal="area_entered" from="Floor" to="." method="_on_floor_area_entered"]
 [connection signal="timeout" from="AppleSpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="GameEndTimer" to="." method="_on_game_end_timer_timeout"]
 [connection signal="finished" from="MusicStreamPlayer2D" to="." method="_on_music_stream_player_2d_finished"]

@@ -82,3 +82,7 @@ func _on_floor_area_entered(area: Area2D) -> void:
 
 func _on_music_stream_player_2d_finished() -> void:
 	music.play()
+
+
+func _on_game_end_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/lose.tscn")
