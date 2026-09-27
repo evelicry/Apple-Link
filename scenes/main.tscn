@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://3d0pqjqcoqu3" path="res://sprites/apple_tree.webp" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dy24eyce547d0" path="res://sprites/sky.webp" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cln68yaevk3i8" path="res://scenes/FakeApple.tscn" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://sdq0nx0dpvgk" path="res://Audio/Music/spencer_yk-little-slimex27s-adventure-151007.mp3" id="7_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://cd0x5am0aius" path="res://Audio/freesound_community-apple-bite-85720.mp3" id="8_tipki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuldn"]
 size = Vector2(1477, 197)
@@ -34,6 +36,7 @@ position = Vector2(336, 0)
 
 [node name="ObjectLinker" type="Line2D" parent="." unique_id=1677003764]
 position = Vector2(2, -9)
+default_color = Color(0, 0, 0, 1)
 script = ExtResource("2_0wfyh")
 metadata/_custom_type_script = "uid://dv0sgwkv1e80e"
 
@@ -43,10 +46,11 @@ position = Vector2(722, 159)
 [node name="Floor" type="Area2D" parent="." unique_id=76121293]
 position = Vector2(9, -22)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=798370726]
+[node name="Area2D" type="Area2D" parent="Floor" unique_id=1482656509]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/Area2D" unique_id=798370726]
 position = Vector2(434.5, 502.5)
 shape = SubResource("RectangleShape2D_kuldn")
-script = ExtResource("1_sugp2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1685695253]
 position = Vector2(458, 66)
@@ -56,7 +60,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="GameEndTimer" type="Timer" parent="." unique_id=1441941482]
-wait_time = 360.0
+wait_time = 180.0
 autostart = true
 
 [node name="TimeLabel" type="Label" parent="." unique_id=241298499]
@@ -73,6 +77,18 @@ offset_right = -45.0
 offset_bottom = -143.0
 text = "Score"
 
-[connection signal="area_entered" from="Floor" to="." method="_on_floor_area_entered"]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=401768494]
+stream = ExtResource("7_o6xl0")
+autoplay = true
+parameters/looping = false
+
+[node name="BitingReal" type="AudioStreamPlayer2D" parent="." unique_id=1486093570]
+stream = ExtResource("8_tipki")
+
+[node name="BitingFake" type="AudioStreamPlayer2D" parent="." unique_id=226818144]
+stream = ExtResource("8_tipki")
+volume_db = 2.0
+pitch_scale = 2.66
+
 [connection signal="body_entered" from="Floor" to="." method="_on_floor_body_entered"]
 [connection signal="timeout" from="AppleSpawnTimer" to="." method="_on_timer_timeout"]
