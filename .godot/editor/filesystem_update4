@@ -1,9 +1,0 @@
-res://scripts/RealApple.gd
-res://scenes/main.tscn
-res://audio/music/temp.txt
-res://scripts/global.gd
-res://scenes/lose.tscn
-res://scenes/win.tscn
-res://scripts/result.gd
-res://scenes/RealApple.tscn
-res://scenes/FakeApple.tscn
